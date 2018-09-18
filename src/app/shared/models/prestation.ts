@@ -17,9 +17,7 @@ export class Prestation {
     }
 
     total_HT(){
-        if (this.tjm_ht){
-            return this.tjm_ht
-        }
+            return this.tjm_ht * this.nb_jours;
     }
     
     total_TTC(tva ?: number){

@@ -6,10 +6,11 @@ import { HeaderComponent } from './conponents/header/header.component';
 import { NavComponent } from './conponents/nav/nav.component';
 import { FooterComponent } from './conponents/footer/footer.component';
 import { PrestationsModule } from '../prestations/prestations.module';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
   imports: [
-    CommonModule, FontAwesomeModule, PrestationsModule
+    CommonModule, FontAwesomeModule, RouterModule
   ],
   declarations: [UiComponent, HeaderComponent, NavComponent, FooterComponent],
   exports: [UiComponent]

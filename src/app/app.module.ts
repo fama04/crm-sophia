@@ -7,6 +7,11 @@ import { AppComponent } from './app.component';
 import { PageNotFoundModule } from './page-not-found/page-not-found.module';
 import { UiModule } from './ui/ui.module';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { ListPrestationsComponent } from './prestations/containers/list-prestations/list-prestations.component';
+import { LoginComponent } from './login/containers/login/login.component';
+import { PageNotFoundComponent } from './page-not-found/containers/page-not-found/page-not-found.component';
+import { Routes, Router } from '@angular/router';
+import { AppRoutingModule } from './app-routing.module';
 
 
 @NgModule({
@@ -15,9 +20,15 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
   ],
   imports: [
     // charger les modules au démarrage de l'appli
-    BrowserModule, LoginModule, PageNotFoundModule, UiModule, NgbModule.forRoot()
+    BrowserModule, NgbModule.forRoot(),UiModule,LoginModule, AppRoutingModule,PageNotFoundModule
+    
   ],
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule { 
+   // Diagnostic only: inspect router configuration
+   constructor(router: Router) {
+    console.log('Routes: ', JSON.stringify(router.config, undefined, 2));
+}
+}

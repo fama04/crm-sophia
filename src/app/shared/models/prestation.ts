@@ -1,7 +1,7 @@
 import { State } from "../enums/state.enum";
+import { Input } from "@angular/core";
 
 export class Prestation {
-   
         id :string;
         typePresta : string;
         client : string;
@@ -9,6 +9,7 @@ export class Prestation {
         tjm_ht = 0;
         taux_tva =20;
         state = State.CONFIRME;
+        @Input() item : Prestation;
 
         constructor(fields?: Partial<Prestation>){
             if(fields){
@@ -18,9 +19,12 @@ export class Prestation {
 
     total_HT(){
             return this.tjm_ht * this.nb_jours;
+            console.log('total hors taxe call');
     }
     
     total_TTC(tva ?: number){
+        console.log('total  ttc call');
+
         const totalHt = this.total_HT();
         if(!tva){
             return totalHt + (this.taux_tva + totalHt/100);

@@ -12,6 +12,10 @@ import { LoginComponent } from './login/containers/login/login.component';
 import { PageNotFoundComponent } from './page-not-found/containers/page-not-found/page-not-found.component';
 import { Routes, Router } from '@angular/router';
 import { AppRoutingModule } from './app-routing.module';
+import { LOCALE_ID } from '@angular/core';
+import { registerLocaleData } from '@angular/common';
+import localeFr from '@angular/common/locales/fr';
+registerLocaleData(localeFr, 'fr');
 
 
 @NgModule({
@@ -23,10 +27,13 @@ import { AppRoutingModule } from './app-routing.module';
     BrowserModule, NgbModule.forRoot(),UiModule,LoginModule, AppRoutingModule,PageNotFoundModule
     
   ],
-  providers: [],
+  providers: [{ provide: LOCALE_ID, useValue: 'fr' }],
   bootstrap: [AppComponent]
 })
 export class AppModule { 
+
+
+// the second parameter 'fr' is optional
    // Diagnostic only: inspect router configuration
    constructor(router: Router) {
     console.log('Routes: ', JSON.stringify(router.config, undefined, 2));

@@ -1,29 +1,18 @@
 <table class="table">
   <thead class="thead-dark">
     <tr>
-      <th scope="col">Type</th>
-      <th scope="col">Client</th>
-      <th scope="col">Nb Jours</th>
-      <th scope="col">Tjm HT</th>
-      <th scope="col">Total HT</th>
-      <th scope="col">Total TTC</th>
-      <th scope="col">Action</th>
-      <th scope="col">Delete</th>
+      <th scope="col" *ngFor = "let item of headers">{{item}}</th>
+     
     </tr>
   </thead>
   <tbody>
-    <tr *ngFor="let item of collection">
-      <th>{{ item.typePresta }}</th>
-      <td>{{ item.client }}</td>
-      <td>{{ item.nb_jours }}</td>
-      <td>{{ item.tjm_ht }}</td>
-      <td>{{ item.total_HT() }}</td>
-      <td>{{ item.total_TTC() }}</td>
-      <td>{{ item.state }}</td>
-      <td>
-        <fa-icon [icon]="faTrashAlt"></fa-icon>
-      </td>
-    </tr>
+    <!-- <tr *ngFor="let item of collection">
+      <app-prestation [item] = "item"></app-prestation>
+    </tr> -->
+ <!-- <ng-container *ngFor="let item of collection">
+      <app-prestation [item] = "item"></app-prestation>
+    </ng-container> -->
 
+        <app-prestation  *ngFor="let item of collection" [item] = "item"></app-prestation>
   </tbody>
 </table>

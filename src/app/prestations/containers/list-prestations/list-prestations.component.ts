@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Prestation } from '../../../shared/models/prestation';
 import { PrestationService } from '../../services/prestation.service';
-import { faTrashAlt } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-list-prestations',
@@ -11,12 +10,23 @@ import { faTrashAlt } from '@fortawesome/free-solid-svg-icons';
 export class ListPrestationsComponent implements OnInit {
 
   public collection :Prestation[];
-  public faTrashAlt = faTrashAlt;
+  public headers : String[];
+
   constructor(private prestationService : PrestationService) { }
 
 
   ngOnInit() {
   this.collection = this.prestationService.collection;
+  this.headers = [
+'Type',
+'Client',
+'Nb Jours',
+'Tjm HT',
+'Total HT',
+'Total TTC',
+'Action',
+'Delete'
+  ]
   }
 
 }

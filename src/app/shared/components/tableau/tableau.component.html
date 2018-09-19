@@ -1,0 +1,31 @@
+<table class="table">
+    <thead class="thead-dark">
+      <tr>
+        <th scope="col" *ngFor = "let item of listHeaders">{{item}}</th>
+       
+      </tr>
+    </thead>
+    <tbody>
+      <!-- <tr *ngFor="let item of collection">
+        <app-prestation [item] = "item"></app-prestation>
+      </tr> -->
+   <!-- <ng-container *ngFor="let item of collection">
+        <app-prestation [item] = "item"></app-prestation>
+      </ng-container> -->
+<!--   
+          <app-prestation  *ngFor="let item of collection" [item] = "item"></app-prestation> -->
+          <ng-content>
+
+          </ng-content>
+          <div>
+              <a [routerLink]="lastRow.route">
+                <fa-icon [icon]="lastRow.icon"></fa-icon>
+                ajouter une prestation
+              </a>
+            </div>
+    </tbody>
+  <!-- </table>
+  <ng-content select = ".test">
+            
+    </ng-content> -->
+    <!-- <ng-content select ="div"></ng-content> -->

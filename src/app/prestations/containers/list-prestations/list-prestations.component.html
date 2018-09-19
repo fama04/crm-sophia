@@ -1,18 +1,3 @@
-<table class="table">
-  <thead class="thead-dark">
-    <tr>
-      <th scope="col" *ngFor = "let item of headers">{{item}}</th>
-     
-    </tr>
-  </thead>
-  <tbody>
-    <!-- <tr *ngFor="let item of collection">
-      <app-prestation [item] = "item"></app-prestation>
-    </tr> -->
- <!-- <ng-container *ngFor="let item of collection">
-      <app-prestation [item] = "item"></app-prestation>
-    </ng-container> -->
-
-        <app-prestation  *ngFor="let item of collection" [item] = "item"></app-prestation>
-  </tbody>
-</table>
+<app-tableau [listHeaders]="headers" [lastRow] = "row">
+  <app-prestation *ngFor="let item of collection" [item]="item"></app-prestation>
+</app-tableau>

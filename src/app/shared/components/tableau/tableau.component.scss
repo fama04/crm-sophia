@@ -1,19 +1,4 @@
 @import '~src/variables';
-
-// %pad {
-//     padding: 0 10px
-
-// }
-// div{
-//     @extend %pad;
-// }
-// h1{
-//     @extend %pad;
-// }
-// dand le compilateur 
-// div,h1{
-//     @extend %pad;
-// }
 div {
     padding: 0 10px
 
@@ -21,7 +6,6 @@ div {
 .container div a {
     color:$palette-color-two;
 }
-
 .state-option{
     background: $palette-color-three;
 }

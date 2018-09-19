@@ -1,4 +1,33 @@
 @import '~src/variables';
-div{
+
+// %pad {
+//     padding: 0 10px
+
+// }
+// div{
+//     @extend %pad;
+// }
+// h1{
+//     @extend %pad;
+// }
+// dand le compilateur 
+// div,h1{
+//     @extend %pad;
+// }
+div {
     padding: 0 10px
+
+}
+.container div a {
+    color:$palette-color-two;
+}
+
+.state-option{
+    background: $palette-color-three;
+}
+.state-annule{
+    background: $palette-color-two;
+}
+.state-confirme{
+    background: $palette-color-four;
 }

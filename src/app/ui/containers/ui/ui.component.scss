@@ -32,7 +32,10 @@ aside {
   width: 0;
   overflow: hidden;
 }
-
+.close-aside .shadow
+{
+  display: none;
+}
 .shadow {
   background: $shadow-bg;
   width: $shadow-width;

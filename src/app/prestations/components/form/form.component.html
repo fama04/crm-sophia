@@ -1,0 +1,29 @@
+<div class ="container">
+<form  [formGroup] ='form' (ngSubmit)="process()">
+    <div class="form-group">
+      <label for="type">Type Prestation</label>
+      <input  name = "type" type="text" class="form-control" id="type"  formControlName ="typePresta" >
+   <!-- {{newPresta.typePresta}} -->
+   <div class = "alert alert-danger" *ngIf="isError('typePresta')">Champ  Invalid</div>
+    </div>
+    <div class="form-group">
+      <label for="client">Client</label>
+      <input  name = "client" type="text" class="form-control" id="client"  formControlName ="client"  >
+    </div>
+    <div class="form-group">
+        <label for="nbj">Nb_jours</label>
+        <input   name = "nbj" type="number" class="form-control" id="nbj"  formControlName ="nb_jours"  >
+      </div>
+      <div class="form-group">
+          <label for="tjm">Tjm HT</label>
+          <input  name = "tjm" type="number" class="form-control" id="tjm"  formControlName ="tjm_ht"  >
+        </div>
+        <div class="form-group">
+            <label for="state">State</label>
+            <select class= "form-control" id= "state" formControlName ="state"  >
+            <option *ngFor = "let state of states" [value] ="state">{{ state }}</option>
+          </select>
+          </div>
+    <button  [disabled] = "form.invalid" type="submit" class="btn btn-primary">Submit</button>
+  </form>
+</div>

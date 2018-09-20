@@ -4,6 +4,7 @@ import { RowModel } from '../../../shared/models/row-model';
 import { faPlusCircle } from '@fortawesome/free-solid-svg-icons';
 import { ClientService } from '../../services/client.service';
 import { faTrashAlt } from '@fortawesome/free-solid-svg-icons';
+import { Observable } from 'rxjs';
 
 
 @Component({
@@ -12,7 +13,7 @@ import { faTrashAlt } from '@fortawesome/free-solid-svg-icons';
   styleUrls: ['./list-clients.component.scss']
 })
 export class ListClientsComponent implements OnInit {
-public collection : Client[];
+public collection$ : Observable<Client[]>;
 public headers : String[];
 public row: RowModel;
 public faTrashAlt= faTrashAlt;
@@ -20,7 +21,7 @@ public faTrashAlt= faTrashAlt;
   constructor(private clientService : ClientService) { }
 
   ngOnInit() {
-    this.collection =this.clientService.collection;
+    this.collection$ =this.clientService._collection$;
     this.headers = [
       'nom',
       'adresse',

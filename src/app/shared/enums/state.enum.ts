@@ -3,3 +3,8 @@ export enum State {
     ANNULE = 'Annulé',
     CONFIRME = 'Confirmé'
 }
+export enum ClientState {
+    ACTIF = 'Actif',
+    INACTIF = 'Inactif'
+}
+

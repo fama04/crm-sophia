@@ -1,0 +1,10 @@
+{
+  "hosting": {
+    "public": "dist/crm-sophia",
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ]
+  }
+}

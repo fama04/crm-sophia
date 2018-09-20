@@ -12,6 +12,6 @@ import { CodePostalPipe } from './pipes/code-postal.pipe';
     CommonModule, FontAwesomeModule, RouterModule
   ],
   declarations: [TotalPipe, TableauComponent, StateDirective, CodePostalPipe],
-  exports :[TotalPipe, TableauComponent, StateDirective]
+  exports :[TotalPipe, TableauComponent, StateDirective,CodePostalPipe]
 })
 export class SharedModule { }

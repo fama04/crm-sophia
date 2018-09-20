@@ -1,0 +1,27 @@
+<div class ="container">
+    <form  [formGroup] ='form' (ngSubmit)="process()">
+        <div class="form-group">
+          <label for="nom">nom</label>
+          <input  name = "nom" type="text" class="form-control" id="nom"  formControlName ="nom" >
+       <!-- {{newPresta.typePresta}} -->
+       <div class = "alert alert-danger" *ngIf="isError('nom')">Champ  Invalid</div>
+        </div>
+        <div class="form-group">
+          <label for="adresse">adresse</label>
+          <input  name = "adresse" type="text" class="form-control" id="adresse"  formControlName ="adresse"  >
+        </div>
+        <div class="form-group">
+            <label for="codePostal">codePostal</label>
+            <input   name = "codePostal" type="text" class="form-control" id="codePostal"  formControlName ="codePostal"  >
+          </div>
+          <div class="form-group">
+              <label for="ville">ville</label>
+              <input  name = "ville" type="text" class="form-control" id="ville"  formControlName ="ville"  >
+            </div>
+            <div class="form-group">
+                <label for="tjm_ht">Tjm HT</label>
+                <input  name = "tjm_ht" type="Number" class="form-control" id="tjm_ht"  formControlName ="tjm_ht"  >
+              </div>
+        <button  [disabled] = "form.invalid" type="submit" class="btn btn-primary">Submit</button>
+      </form>
+    </div>
